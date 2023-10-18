@@ -3,17 +3,19 @@ using DavidTielke.PMA.Data.FileStoring;
 
 namespace DavidTielke.PMA.Data.DataCsvStoring;
 
-public class PersonRepository
+public class PersonRepository : IPersonRepository
 {
-    private readonly PersonConverter _converter;
-    private readonly TextFileReader _reader;
-    private readonly TextFileWriter _writer;
+    private readonly IPersonConverter _converter;
+    private readonly ITextFileReader _reader;
+    private readonly ITextFileWriter _writer;
 
-    public PersonRepository()
+    public PersonRepository(IPersonConverter converter,
+        ITextFileReader reader,
+        ITextFileWriter writer)
     {
-        _reader = new TextFileReader();
-        _writer = new TextFileWriter();
-        _converter = new PersonConverter();
+        _converter = converter;
+        _reader = reader;
+        _writer = writer;
     }
 
     public IQueryable<Person> Load()

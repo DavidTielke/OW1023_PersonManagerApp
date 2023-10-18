@@ -2,7 +2,7 @@
 
 namespace DavidTielke.PMA.Data.DataCsvStoring;
 
-public class PersonConverter
+public class PersonConverter : IPersonConverter
 {
     public IQueryable<Person> FromCsv(string[] csvContent)
     {

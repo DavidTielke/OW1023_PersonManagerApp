@@ -1,6 +1,6 @@
 ﻿namespace DavidTielke.PMA.Data.FileStoring;
 
-public class TextFileWriter
+public class TextFileWriter : ITextFileWriter
 {
     public void Write(string path, string[] text)
     {
