@@ -1,4 +1,6 @@
-﻿using DavidTielke.PMA.Data.DataCsvStoring;
+﻿using Configuration;
+using Configuration.Contract;
+using DavidTielke.PMA.Data.DataCsvStoring;
 using DavidTielke.PMA.Data.FileStoring;
 using DavidTielke.PMA.Logic.PersonManagement;
 using Ninject;
@@ -16,6 +18,7 @@ public class KernelFactory
         kernel.Bind<IPersonConverter>().To<PersonConverter>();
         kernel.Bind<ITextFileReader>().To<TextFileReader>();
         kernel.Bind<ITextFileWriter>().To<TextFileWriter>();
+        kernel.Bind<IConfigurator>().To<Configurator>().InSingletonScope();
 
         return kernel;
     }

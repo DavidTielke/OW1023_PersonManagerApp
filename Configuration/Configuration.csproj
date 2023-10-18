@@ -1,16 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	  <RootNamespace>DavidTielke.PMA.Logic.PersonManagement</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Configuration.Contract\Configuration.Contract.csproj" />
-    <ProjectReference Include="..\DataCsvStoring\DataStoring.Csv.csproj" />
-    <ProjectReference Include="..\PersonManagement.Contract\PersonManagement.Contract.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
-﻿using DavidTielke.PMA.Logic.PersonManagement;
+﻿using Configuration.Contract;
+using DavidTielke.PMA.Logic.PersonManagement;
 using Mappings;
 using Ninject;
 
@@ -10,6 +11,12 @@ internal class Program
     {
         // Ninject
         var kernel = new KernelFactory().Create();
+
+        var config = kernel.Get<IConfigurator>();
+
+        config.Set("AgeTreshold", 10);
+        config.Set("CsvFileName", "data.csv");
+        config.Set("User", Thread.CurrentPrincipal);
 
         var manager = kernel.Get<IPersonManager>();
 
