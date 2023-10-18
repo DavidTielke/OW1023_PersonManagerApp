@@ -4,12 +4,12 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	  <RootNamespace>DavidTielke.PMA.Data.DataCsvStoring</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataClasses\DataClasses.csproj" />
-    <ProjectReference Include="..\FileStoring\FileStoring.csproj" />
+    <Folder Include="Callbacks\" />
+    <Folder Include="DataClasses\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
 
 </Project>

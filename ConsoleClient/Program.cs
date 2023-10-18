@@ -1,6 +1,5 @@
-﻿using DavidTielke.PMA.Data.DataCsvStoring;
-using DavidTielke.PMA.Data.FileStoring;
-using DavidTielke.PMA.Logic.PersonManagement;
+﻿using DavidTielke.PMA.Logic.PersonManagement;
+using Mappings;
 using Ninject;
 
 namespace DavidTielke.PMA.UI.ConsoleClient;
@@ -9,13 +8,8 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var kernel = new StandardKernel();
-
-        kernel.Bind<IPersonManager>().To<PersonManager>();
-        kernel.Bind<IPersonRepository>().To<PersonRepository>();
-        kernel.Bind<IPersonConverter>().To<PersonConverter>();
-        kernel.Bind<ITextFileReader>().To<TextFileReader>();
-        kernel.Bind<ITextFileWriter>().To<TextFileWriter>();
+        // Ninject
+        var kernel = new KernelFactory().Create();
 
         var manager = kernel.Get<IPersonManager>();
 

@@ -1,15 +1,18 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	  <RootNamespace>DavidTielke.PMA.Logic.PersonManagement</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataCsvStoring\DataStoring.Csv.csproj" />
+    <PackageReference Include="Ninject" Version="4.0.0-beta.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PersonManagement.Contract\PersonManagement.Contract.csproj" />
+    <ProjectReference Include="..\ProjectManagement\PersonManagement.csproj" />
   </ItemGroup>
 
 </Project>
